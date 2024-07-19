@@ -19,7 +19,55 @@ namespace QuizGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea; //get the active resolution of the display (minus taskbar)
+            this.Size = new System.Drawing.Size(Convert.ToInt32(0.65f * workingRectangle.Width), Convert.ToInt32(0.65f * workingRectangle.Height)); //set the inital
+            //window size to be 75% of the active resolution
+            this.Location = new System.Drawing.Point(20, 20); //open the window at position 20,20
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

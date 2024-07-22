@@ -39,20 +39,27 @@
             this.HS2 = new System.Windows.Forms.Label();
             this.HS4 = new System.Windows.Forms.Label();
             this.MainMenuGroupBox = new System.Windows.Forms.GroupBox();
-            this.questionForm = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.questionForm = new System.Windows.Forms.GroupBox();
+            this.nextQuestion = new System.Windows.Forms.Button();
+            this.scoreAmount = new System.Windows.Forms.Label();
+            this.questionCount = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Answer3 = new System.Windows.Forms.Button();
+            this.Answer2 = new System.Windows.Forms.Button();
+            this.Answer1 = new System.Windows.Forms.Button();
+            this.Answer0 = new System.Windows.Forms.Button();
+            this.QuestionText = new System.Windows.Forms.Label();
+            this.settingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.mainMenuSettings = new System.Windows.Forms.Button();
+            this.endScreen = new System.Windows.Forms.GroupBox();
+            this.mainMenuEndScreen = new System.Windows.Forms.Button();
+            this.DebugM = new System.Windows.Forms.CheckBox();
             this.MainMenuGroupBox.SuspendLayout();
             this.questionForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.settingsGroupBox.SuspendLayout();
+            this.endScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -66,7 +73,6 @@
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "Quiz Game";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.TitleLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // PlayButton
             // 
@@ -82,7 +88,7 @@
             this.PlayButton.TabIndex = 1;
             this.PlayButton.Text = "Play!";
             this.PlayButton.UseVisualStyleBackColor = false;
-            this.PlayButton.Click += new System.EventHandler(this.button1_Click);
+            this.PlayButton.Click += new System.EventHandler(this.playbuttonClick);
             // 
             // SettingsButton
             // 
@@ -97,6 +103,7 @@
             this.SettingsButton.TabIndex = 2;
             this.SettingsButton.Text = "Settings";
             this.SettingsButton.UseVisualStyleBackColor = false;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // QuitButton
             // 
@@ -111,7 +118,7 @@
             this.QuitButton.TabIndex = 3;
             this.QuitButton.Text = "Quit";
             this.QuitButton.UseVisualStyleBackColor = false;
-            this.QuitButton.Click += new System.EventHandler(this.button3_Click);
+            this.QuitButton.Click += new System.EventHandler(this.quitProgram);
             // 
             // HSLabel
             // 
@@ -124,7 +131,6 @@
             this.HSLabel.TabIndex = 4;
             this.HSLabel.Text = "High Scores";
             this.HSLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HSLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // HS0
             // 
@@ -137,7 +143,6 @@
             this.HS0.TabIndex = 5;
             this.HS0.Text = "Score1";
             this.HS0.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HS0.Click += new System.EventHandler(this.label3_Click);
             // 
             // HS1
             // 
@@ -150,7 +155,6 @@
             this.HS1.TabIndex = 6;
             this.HS1.Text = "Score2";
             this.HS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HS1.Click += new System.EventHandler(this.label4_Click);
             // 
             // HS3
             // 
@@ -187,7 +191,6 @@
             this.HS4.TabIndex = 9;
             this.HS4.Text = "Score5";
             this.HS4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.HS4.Click += new System.EventHandler(this.label7_Click);
             // 
             // MainMenuGroupBox
             // 
@@ -207,147 +210,6 @@
             this.MainMenuGroupBox.Size = new System.Drawing.Size(800, 600);
             this.MainMenuGroupBox.TabIndex = 10;
             this.MainMenuGroupBox.TabStop = false;
-            this.MainMenuGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter_1);
-            // 
-            // questionForm
-            // 
-            this.questionForm.Controls.Add(this.label3);
-            this.questionForm.Controls.Add(this.label2);
-            this.questionForm.Controls.Add(this.button5);
-            this.questionForm.Controls.Add(this.pictureBox1);
-            this.questionForm.Controls.Add(this.button4);
-            this.questionForm.Controls.Add(this.button3);
-            this.questionForm.Controls.Add(this.button2);
-            this.questionForm.Controls.Add(this.button1);
-            this.questionForm.Controls.Add(this.label1);
-            this.questionForm.Location = new System.Drawing.Point(780, -5);
-            this.questionForm.Name = "questionForm";
-            this.questionForm.Size = new System.Drawing.Size(800, 600);
-            this.questionForm.TabIndex = 11;
-            this.questionForm.TabStop = false;
-            this.questionForm.Text = "groupBox1";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(795, 88);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "QuestionText?\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(21, 278);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.MinimumSize = new System.Drawing.Size(300, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(350, 120);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "A";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(435, 281);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.MinimumSize = new System.Drawing.Size(300, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(350, 120);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "B";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(21, 402);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.MinimumSize = new System.Drawing.Size(300, 102);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(350, 120);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "C";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(435, 402);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.MinimumSize = new System.Drawing.Size(300, 102);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(350, 120);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "D";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(78, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(602, 183);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(5, 31);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.MinimumSize = new System.Drawing.Size(30, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 50);
-            this.button5.TabIndex = 11;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 551);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 46);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "1/N";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(661, 552);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 46);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Score";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // groupBox2
             // 
@@ -358,12 +220,216 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // questionForm
+            // 
+            this.questionForm.Controls.Add(this.nextQuestion);
+            this.questionForm.Controls.Add(this.scoreAmount);
+            this.questionForm.Controls.Add(this.questionCount);
+            this.questionForm.Controls.Add(this.pictureBox1);
+            this.questionForm.Controls.Add(this.Answer3);
+            this.questionForm.Controls.Add(this.Answer2);
+            this.questionForm.Controls.Add(this.Answer1);
+            this.questionForm.Controls.Add(this.Answer0);
+            this.questionForm.Controls.Add(this.QuestionText);
+            this.questionForm.Location = new System.Drawing.Point(780, -5);
+            this.questionForm.Name = "questionForm";
+            this.questionForm.Size = new System.Drawing.Size(800, 600);
+            this.questionForm.TabIndex = 11;
+            this.questionForm.TabStop = false;
+            // 
+            // nextQuestion
+            // 
+            this.nextQuestion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nextQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nextQuestion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextQuestion.Location = new System.Drawing.Point(334, 526);
+            this.nextQuestion.Margin = new System.Windows.Forms.Padding(2);
+            this.nextQuestion.Name = "nextQuestion";
+            this.nextQuestion.Size = new System.Drawing.Size(137, 69);
+            this.nextQuestion.TabIndex = 14;
+            this.nextQuestion.Text = "Next";
+            this.nextQuestion.UseVisualStyleBackColor = false;
+            this.nextQuestion.Click += new System.EventHandler(this.nextQ);
+            // 
+            // scoreAmount
+            // 
+            this.scoreAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.scoreAmount.Font = new System.Drawing.Font("Sans Serif Collection", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreAmount.Location = new System.Drawing.Point(661, 552);
+            this.scoreAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.scoreAmount.Name = "scoreAmount";
+            this.scoreAmount.Size = new System.Drawing.Size(134, 46);
+            this.scoreAmount.TabIndex = 13;
+            this.scoreAmount.Text = "Score";
+            this.scoreAmount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // questionCount
+            // 
+            this.questionCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.questionCount.Font = new System.Drawing.Font("Sans Serif Collection", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questionCount.Location = new System.Drawing.Point(11, 551);
+            this.questionCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.questionCount.Name = "questionCount";
+            this.questionCount.Size = new System.Drawing.Size(105, 46);
+            this.questionCount.TabIndex = 12;
+            this.questionCount.Text = "1/N";
+            this.questionCount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(78, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(602, 183);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Answer3
+            // 
+            this.Answer3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Answer3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Answer3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Answer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Answer3.Location = new System.Drawing.Point(435, 402);
+            this.Answer3.Margin = new System.Windows.Forms.Padding(2);
+            this.Answer3.MinimumSize = new System.Drawing.Size(300, 102);
+            this.Answer3.Name = "Answer3";
+            this.Answer3.Size = new System.Drawing.Size(350, 120);
+            this.Answer3.TabIndex = 9;
+            this.Answer3.Text = "D";
+            this.Answer3.UseVisualStyleBackColor = false;
+            this.Answer3.Click += new System.EventHandler(this.Answer3_Click);
+            // 
+            // Answer2
+            // 
+            this.Answer2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Answer2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Answer2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Answer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Answer2.Location = new System.Drawing.Point(21, 402);
+            this.Answer2.Margin = new System.Windows.Forms.Padding(2);
+            this.Answer2.MinimumSize = new System.Drawing.Size(300, 102);
+            this.Answer2.Name = "Answer2";
+            this.Answer2.Size = new System.Drawing.Size(350, 120);
+            this.Answer2.TabIndex = 8;
+            this.Answer2.Text = "C";
+            this.Answer2.UseVisualStyleBackColor = false;
+            this.Answer2.Click += new System.EventHandler(this.Answer2_Click);
+            // 
+            // Answer1
+            // 
+            this.Answer1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Answer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Answer1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Answer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Answer1.Location = new System.Drawing.Point(435, 281);
+            this.Answer1.Margin = new System.Windows.Forms.Padding(2);
+            this.Answer1.MinimumSize = new System.Drawing.Size(300, 102);
+            this.Answer1.Name = "Answer1";
+            this.Answer1.Size = new System.Drawing.Size(350, 120);
+            this.Answer1.TabIndex = 7;
+            this.Answer1.Text = "B";
+            this.Answer1.UseVisualStyleBackColor = false;
+            this.Answer1.Click += new System.EventHandler(this.Answer1_Click);
+            // 
+            // Answer0
+            // 
+            this.Answer0.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Answer0.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Answer0.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Answer0.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Answer0.Location = new System.Drawing.Point(21, 278);
+            this.Answer0.Margin = new System.Windows.Forms.Padding(2);
+            this.Answer0.MinimumSize = new System.Drawing.Size(300, 102);
+            this.Answer0.Name = "Answer0";
+            this.Answer0.Size = new System.Drawing.Size(350, 120);
+            this.Answer0.TabIndex = 6;
+            this.Answer0.Text = "A";
+            this.Answer0.UseVisualStyleBackColor = false;
+            this.Answer0.Click += new System.EventHandler(this.Answer0_Click);
+            // 
+            // QuestionText
+            // 
+            this.QuestionText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuestionText.Font = new System.Drawing.Font("Sans Serif Collection", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuestionText.Location = new System.Drawing.Point(0, 16);
+            this.QuestionText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.QuestionText.Name = "QuestionText";
+            this.QuestionText.Size = new System.Drawing.Size(795, 88);
+            this.QuestionText.TabIndex = 5;
+            this.QuestionText.Text = "QuestionText?\r\n";
+            this.QuestionText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // settingsGroupBox
+            // 
+            this.settingsGroupBox.Controls.Add(this.DebugM);
+            this.settingsGroupBox.Controls.Add(this.mainMenuSettings);
+            this.settingsGroupBox.Location = new System.Drawing.Point(1, 603);
+            this.settingsGroupBox.Name = "settingsGroupBox";
+            this.settingsGroupBox.Size = new System.Drawing.Size(800, 600);
+            this.settingsGroupBox.TabIndex = 12;
+            this.settingsGroupBox.TabStop = false;
+            // 
+            // mainMenuSettings
+            // 
+            this.mainMenuSettings.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.mainMenuSettings.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mainMenuSettings.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.mainMenuSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenuSettings.Location = new System.Drawing.Point(35, 429);
+            this.mainMenuSettings.Margin = new System.Windows.Forms.Padding(2);
+            this.mainMenuSettings.MinimumSize = new System.Drawing.Size(300, 102);
+            this.mainMenuSettings.Name = "mainMenuSettings";
+            this.mainMenuSettings.Size = new System.Drawing.Size(451, 120);
+            this.mainMenuSettings.TabIndex = 14;
+            this.mainMenuSettings.Text = "Main Menu";
+            this.mainMenuSettings.UseVisualStyleBackColor = false;
+            this.mainMenuSettings.Click += new System.EventHandler(this.settingsFromMain);
+            // 
+            // endScreen
+            // 
+            this.endScreen.Controls.Add(this.mainMenuEndScreen);
+            this.endScreen.Location = new System.Drawing.Point(807, 616);
+            this.endScreen.Name = "endScreen";
+            this.endScreen.Size = new System.Drawing.Size(800, 600);
+            this.endScreen.TabIndex = 13;
+            this.endScreen.TabStop = false;
+            // 
+            // mainMenuEndScreen
+            // 
+            this.mainMenuEndScreen.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.mainMenuEndScreen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mainMenuEndScreen.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.mainMenuEndScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenuEndScreen.Location = new System.Drawing.Point(41, 416);
+            this.mainMenuEndScreen.Margin = new System.Windows.Forms.Padding(2);
+            this.mainMenuEndScreen.MinimumSize = new System.Drawing.Size(300, 102);
+            this.mainMenuEndScreen.Name = "mainMenuEndScreen";
+            this.mainMenuEndScreen.Size = new System.Drawing.Size(451, 120);
+            this.mainMenuEndScreen.TabIndex = 13;
+            this.mainMenuEndScreen.Text = "Main Menu";
+            this.mainMenuEndScreen.UseVisualStyleBackColor = false;
+            this.mainMenuEndScreen.Click += new System.EventHandler(this.returnToMainMenuEnd);
+            // 
+            // DebugM
+            // 
+            this.DebugM.AutoSize = true;
+            this.DebugM.Location = new System.Drawing.Point(173, 131);
+            this.DebugM.Name = "DebugM";
+            this.DebugM.Size = new System.Drawing.Size(168, 25);
+            this.DebugM.TabIndex = 15;
+            this.DebugM.Text = "Debugging Mode";
+            this.DebugM.UseVisualStyleBackColor = true;
+            this.DebugM.CheckedChanged += new System.EventHandler(this.DebugM_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1582, 1055);
+            this.ClientSize = new System.Drawing.Size(2107, 1325);
+            this.Controls.Add(this.endScreen);
+            this.Controls.Add(this.settingsGroupBox);
             this.Controls.Add(this.questionForm);
             this.Controls.Add(this.MainMenuGroupBox);
             this.MinimumSize = new System.Drawing.Size(800, 600);
@@ -373,6 +439,9 @@
             this.MainMenuGroupBox.ResumeLayout(false);
             this.questionForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.settingsGroupBox.ResumeLayout(false);
+            this.settingsGroupBox.PerformLayout();
+            this.endScreen.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -391,16 +460,21 @@
         private System.Windows.Forms.Label HS4;
         private System.Windows.Forms.GroupBox MainMenuGroupBox;
         private System.Windows.Forms.GroupBox questionForm;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label QuestionText;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Answer3;
+        private System.Windows.Forms.Button Answer1;
+        private System.Windows.Forms.Button Answer0;
+        private System.Windows.Forms.Label questionCount;
+        private System.Windows.Forms.Label scoreAmount;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox settingsGroupBox;
+        private System.Windows.Forms.GroupBox endScreen;
+        private System.Windows.Forms.Button mainMenuEndScreen;
+        private System.Windows.Forms.Button nextQuestion;
+        private System.Windows.Forms.Button Answer2;
+        private System.Windows.Forms.Button mainMenuSettings;
+        private System.Windows.Forms.CheckBox DebugM;
     }
 }
 

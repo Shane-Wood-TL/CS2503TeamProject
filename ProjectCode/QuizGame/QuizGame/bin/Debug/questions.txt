@@ -1,0 +1,26 @@
+Where is Trine University?
+Ohio
+Michigan
+Indiana
+Wisconsin
+none
+2
+
+What Language is the program written in?
+C++
+C#
+Python
+C
+none
+1
+
+What is this class called?
+CS2503
+CS1113
+CS3613
+CS2103
+none
+0
+
+
+

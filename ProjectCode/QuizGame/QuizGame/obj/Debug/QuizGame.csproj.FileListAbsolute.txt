@@ -8,3 +8,4 @@ C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\Quiz
 C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\obj\Debug\QuizGame.csproj.CoreCompileInputs.cache
 C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\obj\Debug\QuizGame.exe
 C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\obj\Debug\QuizGame.pdb
+C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\questions.txt

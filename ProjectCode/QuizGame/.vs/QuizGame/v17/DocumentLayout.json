@@ -3,102 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|c:\\users\\townl\\onedrive\\documents\\github\\test\\cs2503teamproject\\projectcode\\quizgame\\quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|c:\\users\\townl\\onedrive\\documents\\github\\test\\cs2503teamproject\\projectcode\\quizgame\\quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\quizgame\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\quizgame\\questions.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\questions.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\quizgame\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\questionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\quizgame\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6456C07B-55D5-49A3-97A6-C89B6F957587}|QuizGame\\QuizGame.csproj|solutionrelative:quizgame\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "questions.txt",
-              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questions.txt",
-              "RelativeDocumentMoniker": "QuizGame\\questions.txt",
-              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questions.txt",
-              "RelativeToolTip": "QuizGame\\questions.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-07-22T03:05:39.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "questionManager.cs",
-              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questionManager.cs",
-              "RelativeDocumentMoniker": "QuizGame\\questionManager.cs",
-              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questionManager.cs",
-              "RelativeToolTip": "QuizGame\\questionManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGYAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T02:05:16.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "QuizGame\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.Designer.cs",
-              "RelativeToolTip": "QuizGame\\Form1.Designer.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T04:21:09.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.cs",
-              "RelativeDocumentMoniker": "QuizGame\\Form1.cs",
-              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.cs [Design]",
-              "RelativeToolTip": "QuizGame\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T02:01:03.676Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "5709fff6-77d0-4931-8b5c-bd2b6c585d5a",
-        "Display": 1,
-        "X": 7,
-        "Y": 8,
-        "Width": 1534,
-        "Height": 814,
-        "WindowState": 0
-      },
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -112,10 +40,61 @@
               "RelativeDocumentMoniker": "QuizGame\\Form1.cs",
               "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.cs",
               "RelativeToolTip": "QuizGame\\Form1.cs",
-              "ViewState": "AQIAAMICAAAAAAAAAAAUwAUDAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-19T03:24:43.486Z",
+              "WhenOpened": "2024-07-24T04:18:02.135Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "questions.txt",
+              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questions.txt",
+              "RelativeDocumentMoniker": "QuizGame\\questions.txt",
+              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questions.txt",
+              "RelativeToolTip": "QuizGame\\questions.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-07-22T03:05:39.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "questionManager.cs",
+              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questionManager.cs",
+              "RelativeDocumentMoniker": "QuizGame\\questionManager.cs",
+              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\questionManager.cs",
+              "RelativeToolTip": "QuizGame\\questionManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T02:05:16.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "QuizGame\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.Designer.cs",
+              "RelativeToolTip": "QuizGame\\Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T04:21:09.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.cs",
+              "RelativeDocumentMoniker": "QuizGame\\Form1.cs",
+              "ToolTip": "C:\\Users\\townl\\OneDrive\\Documents\\GitHub\\Test\\CS2503TeamProject\\ProjectCode\\QuizGame\\QuizGame\\Form1.cs [Design]",
+              "RelativeToolTip": "QuizGame\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T02:01:03.676Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

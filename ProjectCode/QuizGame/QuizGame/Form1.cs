@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Media;
 
 namespace QuizGame
 {   
@@ -20,12 +21,14 @@ namespace QuizGame
         private Question currentQuestion;
         private int windowHeight = 600;
         private int windowWidth = 800;
+        bool playSoundEffects = false;
 
         public Form1()
         {
             InitializeComponent();
             questionManager = new QuestionManager();
             LoadQuestionsFromDefaultFile();
+            
         }
 
         private void LoadQuestionsFromDefaultFile()
@@ -44,8 +47,6 @@ namespace QuizGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            windowWidth = 1920;
-            windowHeight = 1080;
             System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea; //get the active resolution of the display (minus taskbar)
             this.Size = new System.Drawing.Size(windowWidth, windowHeight); ; //set the inital
             //window size to be 65% of the active resolution
@@ -69,39 +70,123 @@ namespace QuizGame
             endScreen.Location = new System.Drawing.Point(windowWidth, windowHeight); //move the group box to the visble window
 
 
-
-
-
-
-            TitleLabel.Size = new System.Drawing.Size(1920, 216);
+            //title page
+            TitleLabel.Size = new System.Drawing.Size(800, 120);
             TitleLabel.Location = new System.Drawing.Point(0, 0);
 
-            PlayButton.Location = new System.Drawing.Point(48, 252);
-            PlayButton.Size = new System.Drawing.Size(768, 216);
+            PlayButton.Location = new System.Drawing.Point(20, 140);
+            PlayButton.Size = new System.Drawing.Size(320, 120);
 
-            SettingsButton.Location = new System.Drawing.Point(48, 504);
-            SettingsButton.Size = new System.Drawing.Size(768, 216);
+            SettingsButton.Location = new System.Drawing.Point(20, 280);
+            SettingsButton.Size = new System.Drawing.Size(320, 120);
 
-            QuitButton.Location = new System.Drawing.Point(48, 774);
-            QuitButton.Size = new System.Drawing.Size(768, 216);
+            QuitButton.Location = new System.Drawing.Point(20, 430);
+            QuitButton.Size = new System.Drawing.Size(320, 120);
 
-            HSLabel.Location = new System.Drawing.Point(864, 216);
-            HSLabel.Size = new System.Drawing.Size(1056, 126);
+            HSLabel.Location = new System.Drawing.Point(360, 120);
+            HSLabel.Size = new System.Drawing.Size(440, 70);
 
-            HS0.Location = new System.Drawing.Point(864, 360);
-            HS0.Size = new System.Drawing.Size(1056, 100);
+            HS0.Location = new System.Drawing.Point(360, 200);
+            HS0.Size = new System.Drawing.Size(440, 56);
 
-            HS1.Location = new System.Drawing.Point(864, 486);
-            HS1.Size = new System.Drawing.Size(1056, 100);
+            HS1.Location = new System.Drawing.Point(360, 270);
+            HS1.Size = new System.Drawing.Size(440, 56);
 
-            HS2.Location = new System.Drawing.Point(864, 630);
-            HS2.Size = new System.Drawing.Size(1056, 100);
+            HS2.Location = new System.Drawing.Point(360, 350);
+            HS2.Size = new System.Drawing.Size(440, 56);
 
-            HS3.Location = new System.Drawing.Point(864, 774);
-            HS3.Size = new System.Drawing.Size(1056, 100);
+            HS3.Location = new System.Drawing.Point(360, 430);
+            HS3.Size = new System.Drawing.Size(440, 56);
 
-            HS4.Location = new System.Drawing.Point(864, 900);
-            HS4.Size = new System.Drawing.Size(1056, 100);
+            HS4.Location = new System.Drawing.Point(360, 500);
+            HS4.Size = new System.Drawing.Size(440, 56);
+
+
+
+            //question page
+            QuestionText.Location = new System.Drawing.Point(0, 0);
+            QuestionText.Size = new System.Drawing.Size(800, 180);
+
+            pictureBox1.Location = new System.Drawing.Point(0, 180);
+            pictureBox1.Size = new System.Drawing.Size(800, 250);
+
+            Answer0.Location = new System.Drawing.Point(0, 344);
+            Answer0.Size = new System.Drawing.Size(400, 57);
+
+            Answer1.Location = new System.Drawing.Point(400, 344);
+            Answer1.Size = new System.Drawing.Size(400, 57);
+
+            Answer2.Location = new System.Drawing.Point(0, 421);
+            Answer2.Size = new System.Drawing.Size(400, 57);
+
+            Answer3.Location = new System.Drawing.Point(400, 421);
+            Answer3.Size = new System.Drawing.Size(400, 57);
+
+            questionCount.Location = new System.Drawing.Point(0, 520);
+            questionCount.Size = new System.Drawing.Size(100, 57);
+
+            scoreAmount.Location = new System.Drawing.Point(700, 520);
+            scoreAmount.Size = new System.Drawing.Size(100, 57);
+
+            nextQuestion.Size = new System.Drawing.Size(300, 57);
+            nextQuestion.Location = new System.Drawing.Point(250, 503);
+
+            //Settings Menu
+            settingsLabel.Size = new System.Drawing.Size(800, 120);
+            settingsLabel.Location = new System.Drawing.Point(0, 0);
+
+            comboBox1.Size = new System.Drawing.Size(120, 57);
+            comboBox1.Location = new System.Drawing.Point(400, 178);
+
+            resLabel.Size = new System.Drawing.Size(150, 57);
+            resLabel.Location = new System.Drawing.Point(250, 160);
+
+            DebugM.Size = new System.Drawing.Size(300, 57);
+            DebugM.Location = new System.Drawing.Point(380, 210);
+
+            soundEffects.Size = new System.Drawing.Size(300, 57);
+            soundEffects.Location = new System.Drawing.Point(380, 250);
+
+            Narration.Size = new System.Drawing.Size(300, 57);
+            Narration.Location = new System.Drawing.Point(380, 290);
+
+            mainMenuSettings.Size = new System.Drawing.Size(500, 57);
+            mainMenuSettings.Location = new System.Drawing.Point(150, 475);
+
+
+            //End screen
+            highScoreEnd.Size = new System.Drawing.Size(800, 140);
+            highScoreEnd.Location = new System.Drawing.Point(0, 0);
+
+            youScored.Size = new System.Drawing.Size(500, 57);
+            youScored.Location = new System.Drawing.Point(10, 190);
+
+            notNewHighScore.Size = new System.Drawing.Size(500, 57);
+            notNewHighScore.Location = new System.Drawing.Point(10, 250);
+
+            enterNameLabel.Size = new System.Drawing.Size(500, 57);
+            enterNameLabel.Location = new System.Drawing.Point(10, 350);
+
+            nameTextBox.Size = new System.Drawing.Size(500, 57);
+            nameTextBox.Location = new System.Drawing.Point(10, 400);
+
+            HS0_end.Size = new System.Drawing.Size(300, 57);
+            HS0_end.Location = new System.Drawing.Point(500, 150);
+
+            HS1_end.Size = new System.Drawing.Size(300, 57);
+            HS1_end.Location = new System.Drawing.Point(500, 210);
+
+            HS2_end.Size = new System.Drawing.Size(300, 57);
+            HS2_end.Location = new System.Drawing.Point(500, 270);
+
+            HS3_end.Size = new System.Drawing.Size(300, 57);
+            HS3_end.Location = new System.Drawing.Point(500, 330);
+
+            HS4_end.Size = new System.Drawing.Size(300, 57);
+            HS4_end.Location = new System.Drawing.Point(500, 400);
+
+            mainMenuEndScreen.Size = new System.Drawing.Size(500, 57);
+            mainMenuEndScreen.Location = new System.Drawing.Point(150, 475);
 
         }
 
@@ -274,6 +359,18 @@ namespace QuizGame
             {
                 score++;//increase current score if correct
                 scoreAmount.Text = score.ToString(); //display new score
+                if (playSoundEffects) {  //play correct sound effect
+                SoundPlayer simpleSound = new SoundPlayer(@"Correct.wav");
+                simpleSound.Play();
+                }
+            }
+            else
+            {
+                if (playSoundEffects)
+                {
+                    SoundPlayer simpleSound = new SoundPlayer(@"Wrong.wav"); //play wrong sound effect
+                    simpleSound.Play();
+                }
             }
             LoadNextQuestion();
         }
@@ -793,7 +890,14 @@ namespace QuizGame
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (soundEffects.Checked)
+            {
+                playSoundEffects = true;
+            }
+            else
+            {
+                playSoundEffects = false;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -802,6 +906,11 @@ namespace QuizGame
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenuGroupBox_Enter(object sender, EventArgs e)
         {
 
         }

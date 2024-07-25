@@ -3,16 +3,8 @@ Ohio
 Michigan
 Indiana
 Wisconsin
-none
+Pictures/trine.jpg
 2
-
-What Language is the program written in?
-C++
-C#
-Python
-C
-none
-1
 
 What is this class called?
 CS2503
@@ -22,5 +14,11 @@ CS2103
 none
 0
 
-
+What Language is the program written in?
+C++
+C#
+Python
+C
+Pictures/programmingLanguages.jpg
+1
 

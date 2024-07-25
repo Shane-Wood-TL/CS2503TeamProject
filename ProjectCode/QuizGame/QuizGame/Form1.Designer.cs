@@ -273,10 +273,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(78, 92);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(182, 65);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(602, 182);
+            this.pictureBox1.Size = new System.Drawing.Size(403, 209);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -424,9 +425,9 @@
             "1280x720",
             "1920x1080"});
             this.comboBox1.Location = new System.Drawing.Point(64, 188);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 24);
+            this.comboBox1.Size = new System.Drawing.Size(150, 21);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Text = "800x600";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -516,7 +517,7 @@
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(54, 322);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(400, 41);
             this.nameTextBox.TabIndex = 16;
@@ -645,7 +646,6 @@
         private System.Windows.Forms.GroupBox MainMenuGroupBox;
         private System.Windows.Forms.GroupBox questionForm;
         private System.Windows.Forms.Label QuestionText;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Answer3;
         private System.Windows.Forms.Button Answer1;
         private System.Windows.Forms.Button Answer0;
@@ -673,6 +673,7 @@
         private System.Windows.Forms.Label enterNameLabel;
         private System.Windows.Forms.Label notNewHighScore;
         private System.Windows.Forms.Label youScored;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

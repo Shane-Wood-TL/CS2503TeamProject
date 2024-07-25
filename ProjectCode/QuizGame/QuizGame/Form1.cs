@@ -11,39 +11,47 @@ using System.IO;
 using System.Diagnostics;
 using System.Media;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using System.IO.Ports;
 
 namespace QuizGame
 {
     public partial class Form1 : Form
     {
-        bool debuggingMode = false;
-        int score = 0;
+        
         private QuestionManager questionManager;
+        private HighScoreManager highScoreManager;
         private Question currentQuestion;
-        private int windowHeight = 600;
+
+        //current resolution
+        private int windowHeight = 600; 
         private int windowWidth = 800;
-        bool playSoundEffects = false;
+        //sound effects option
+        bool playSoundEffects = true;
+        //debugging mode option
+        bool debuggingMode = false;
+
+        //current game score
+        int score = 0;
+        //current question index
+        private int atQuestion = 0;
 
         public Form1()
         {
             InitializeComponent();
-            questionManager = new QuestionManager();
-            LoadQuestionsFromDefaultFile();
+            string filePath2 = "highScores.txt"; //file name for high scores
+            highScoreManager = new HighScoreManager(filePath2); //create high score manager
+            questionManager = new QuestionManager(); //create question manager 
+            LoadQuestionsFromDefaultFile(); //load questions
+            DisplayHighScores(); //display scores on main menu
 
         }
 
         private void LoadQuestionsFromDefaultFile()
         {
             string filePath = "questions.txt"; // The path to the questions file
-            if (File.Exists(filePath))
-            {
-                questionManager.LoadQuestionsFromFile(filePath);
-            }
-            else
-            {
-                Debug.WriteLine($"The file {filePath} was not found.", "File Not Found");
+            questionManager.LoadQuestionsFromFile(filePath); //load the questions
 
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,14 +76,15 @@ namespace QuizGame
             endScreen.Location = new System.Drawing.Point(windowWidth, windowHeight); //move the group box to the visble window
 
 
-            setRes800x600();
+            setRes800x600(); //start with 800x600 resolution
 
         }
 
         private void playbuttonClick(object sender, EventArgs e) //main menu, play button 
         {
             score = 0;
-            scoreAmount.Text = score.ToString(); //display new score
+            scoreAmount.Text = "Score: "+score.ToString(); //display new score
+            atQuestion = 0;
             questionManager.CurrentQuestionIndex = 0;
             if (debuggingMode == false)
             {
@@ -85,17 +94,22 @@ namespace QuizGame
             else
             {
                 questionForm.Location = new System.Drawing.Point(windowWidth, 0); //move the group box to the visble window
-                MainMenuGroupBox.Visible = true;
-                settingsGroupBox.Visible = true;
-                questionForm.Visible = true;
                 setScenes(true, true, true, true); //show all
             }
-            LoadNextQuestion();
+            LoadNextQuestion(); //load first question
         }
 
         private void LoadNextQuestion()
         {
             currentQuestion = questionManager.GetNextQuestion();
+            atQuestion++; //increase current question number
+            questionCount.Text = atQuestion.ToString() + "/" + questionManager.Questions.Count.ToString();
+
+            nextQuestion.Visible = false; //hide next question button until a answer is selected
+            Answer0.Enabled = true;
+            Answer1.Enabled = true;
+            Answer2.Enabled = true;
+            Answer3.Enabled = true; //show all buttons
             if (currentQuestion != null)
             {
                 // Update UI with the current question details
@@ -103,7 +117,7 @@ namespace QuizGame
                 Answer0.Text = currentQuestion.Answers[0];
                 Answer1.Text = currentQuestion.Answers[1];
                 Answer2.Text = currentQuestion.Answers[2];
-                Answer3.Text = currentQuestion.Answers[3];
+                Answer3.Text = currentQuestion.Answers[3]; //get the text for each question
                 if (currentQuestion.PictureLocation == "none")
                 {
                     pictureBox1.Visible = false; //hide if no picture is given
@@ -111,9 +125,7 @@ namespace QuizGame
                 else
                 {
                     pictureBox1.Visible = true; //show if picture
-                    pictureBox1.ImageLocation = currentQuestion.PictureLocation;
-                    Debug.WriteLine(currentQuestion.PictureLocation);
-
+                    pictureBox1.ImageLocation = currentQuestion.PictureLocation; //get the image location from the question
                 }
             }
             else
@@ -122,14 +134,15 @@ namespace QuizGame
                 if (debuggingMode == false)
                 {
                     setScenes(false, false, false, true); //show end screen
-                    endScreen.Location = new System.Drawing.Point(0, 0);
+                    youScored.Text = "You Scored: " + score.ToString() + "/" + questionManager.Questions.Count.ToString(); //write score
+                    endScreen.Location = new System.Drawing.Point(0, 0); //move end screen to visible
                 }
             }
         }
 
         private void quitProgram(object sender, EventArgs e) //main menu, quit button
         {
-            this.Close();
+            this.Close(); //quit the program
         }
 
 
@@ -138,21 +151,24 @@ namespace QuizGame
             if (debuggingMode == false)
             {
                 setScenes(true, false, false, false); //only show main menu
+
             }
+            string name = nameTextBox.Text; //get name enter text box
+            if (!string.IsNullOrEmpty(name))
+            {
+                highScoreManager.WriteHighScore(name, score); //write the score and name to the file
+                Debug.WriteLine("saved");
+            }
+            else
+            {
+                Debug.WriteLine("no name found"); //do not write if no name is found
+            }
+            DisplayHighScores(); //update the scores
         }
 
         private void nextQ(object sender, EventArgs e) //next button
         {
-
-            if (debuggingMode == false)
-            {
-                endScreen.Location = new System.Drawing.Point(0, 0); //move the group box to the visble window
-                setScenes(false, false, false, true); //only show end screen
-            }
-            else
-            {
-                endScreen.Location = new System.Drawing.Point(windowWidth, windowHeight); //move the group box to the visble window
-            }
+            LoadNextQuestion();
         }
 
         private void settingsFromMain(object sender, EventArgs e) //settings page main menu button
@@ -224,7 +240,8 @@ namespace QuizGame
             if (isCorrect)
             {
                 score++;//increase current score if correct
-                scoreAmount.Text = score.ToString(); //display new score
+                QuestionText.Text = "Correct!";
+                scoreAmount.Text = "Score: " + score.ToString(); //display new score
                 if (playSoundEffects)
                 {  //play correct sound effect
                     SoundPlayer simpleSound = new SoundPlayer(@"Sounds/Correct.wav");
@@ -233,13 +250,34 @@ namespace QuizGame
             }
             else
             {
+                QuestionText.Text = "Incorrect";
                 if (playSoundEffects)
                 {
                     SoundPlayer simpleSound = new SoundPlayer(@"Sounds/Wrong.wav"); //play wrong sound effect
                     simpleSound.Play();
                 }
             }
-            LoadNextQuestion();
+            //disable all other button inputs
+            Answer0.Enabled = false;
+            Answer1.Enabled = false;
+            Answer2.Enabled = false;
+            Answer3.Enabled = false; 
+            nextQuestion.Visible = true; //allow the person to go to the next question
+            string[] lowestScore = HS4.Text.Split(':'); //get the lowest score
+            int.TryParse(lowestScore[1].Trim(), out int lowestScoreV); //get string back to a int
+
+            if (score >= lowestScoreV) //if current score is higher than the lowest then they can enter their name
+            {
+                notNewHighScore.Visible = false;
+                enterNameLabel.Visible = true;
+                nameTextBox.Visible = true;
+            }
+            else //score is too low to save
+            {
+                notNewHighScore.Visible = true;
+                enterNameLabel.Visible = false;
+                nameTextBox.Visible = false;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -290,22 +328,7 @@ namespace QuizGame
             {
                 playSoundEffects = false;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainMenuGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
+        } //check box for sound effects
 
         private void setRes800x600()
         {
@@ -368,8 +391,8 @@ namespace QuizGame
             questionCount.Location = new System.Drawing.Point(0, 520);
             questionCount.Size = new System.Drawing.Size(100, 57);
 
-            scoreAmount.Location = new System.Drawing.Point(700, 520);
-            scoreAmount.Size = new System.Drawing.Size(100, 57);
+            scoreAmount.Location = new System.Drawing.Point(600, 520);
+            scoreAmount.Size = new System.Drawing.Size(200, 57);
 
             nextQuestion.Size = new System.Drawing.Size(300, 57);
             nextQuestion.Location = new System.Drawing.Point(250, 503);
@@ -490,7 +513,7 @@ namespace QuizGame
             questionCount.Location = new System.Drawing.Point(0, 624);
             questionCount.Size = new System.Drawing.Size(160, 68);
 
-            scoreAmount.Location = new System.Drawing.Point(1120, 624);
+            scoreAmount.Location = new System.Drawing.Point(1060, 624);
             scoreAmount.Size = new System.Drawing.Size(160, 68);
 
             nextQuestion.Size = new System.Drawing.Size(480, 68);
@@ -612,7 +635,7 @@ namespace QuizGame
             questionCount.Location = new System.Drawing.Point(0, 936);
             questionCount.Size = new System.Drawing.Size(240, 102);
 
-            scoreAmount.Location = new System.Drawing.Point(1680, 936);
+            scoreAmount.Location = new System.Drawing.Point(1600, 936);
             scoreAmount.Size = new System.Drawing.Size(240, 102);
 
             nextQuestion.Size = new System.Drawing.Size(720, 102);
@@ -715,5 +738,35 @@ namespace QuizGame
             }
         } //pick which windows are visible
 
+
+        private void DisplayHighScores() //assigns read values to text labels based on index
+        {
+            var highScores = highScoreManager.ReadHighScores();
+            for (int i = 0; i < highScores.Count && i < 5; i++)
+            {
+                var highScore = highScores[i];
+                if (i == 0)
+                {
+                    HS0.Text = $"{highScore.Name}: {highScore.Score}";
+                    HS0_end.Text = $"{highScore.Name}: {highScore.Score}";
+                }
+                if (i == 1) {
+                    HS1.Text = $"{highScore.Name}: {highScore.Score}";
+                    HS1_end.Text = $"{highScore.Name}: {highScore.Score}";
+                }
+                if (i == 2) {
+                    HS2.Text = $"{highScore.Name}: {highScore.Score}";
+                    HS2_end.Text = $"{highScore.Name}: {highScore.Score}";
+                }
+                if (i == 3) {
+                    HS3.Text = $"{highScore.Name}: {highScore.Score}";
+                    HS3_end.Text = $"{highScore.Name}: {highScore.Score}";
+                }
+                if (i == 4) {
+                    HS4.Text = $"{highScore.Name}: {highScore.Score}";
+                    HS4_end.Text = $"{highScore.Name}: {highScore.Score}";
+                }
+            }
+        }
     }
 }

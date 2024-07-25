@@ -215,7 +215,6 @@
             this.MainMenuGroupBox.Size = new System.Drawing.Size(1000, 750);
             this.MainMenuGroupBox.TabIndex = 10;
             this.MainMenuGroupBox.TabStop = false;
-            this.MainMenuGroupBox.Enter += new System.EventHandler(this.MainMenuGroupBox_Enter);
             // 
             // questionForm
             // 
@@ -389,7 +388,6 @@
             this.resLabel.TabIndex = 10;
             this.resLabel.Text = "Resolution";
             this.resLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.resLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // Narration
             // 
@@ -406,6 +404,8 @@
             // soundEffects
             // 
             this.soundEffects.AutoSize = true;
+            this.soundEffects.Checked = true;
+            this.soundEffects.CheckState = System.Windows.Forms.CheckState.Checked;
             this.soundEffects.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soundEffects.Location = new System.Drawing.Point(198, 275);
             this.soundEffects.Margin = new System.Windows.Forms.Padding(2);
@@ -554,7 +554,6 @@
             this.highScoreEnd.TabIndex = 15;
             this.highScoreEnd.Text = "High Scores:";
             this.highScoreEnd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.highScoreEnd.Click += new System.EventHandler(this.label6_Click);
             // 
             // mainMenuEndScreen
             // 

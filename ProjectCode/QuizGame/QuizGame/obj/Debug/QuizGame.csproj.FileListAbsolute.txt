@@ -14,3 +14,4 @@ C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\Quiz
 C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\Sounds\Wrong.wav
 C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\Pictures\trine.jpg
 C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\Pictures\programmingLanguages.jpg
+C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\highScores.txt

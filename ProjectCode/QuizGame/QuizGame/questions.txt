@@ -22,3 +22,10 @@ C
 Pictures/programmingLanguages.jpg
 1
 
+Did you enjoy the quiz?
+Yes
+No
+none
+none
+none
+0

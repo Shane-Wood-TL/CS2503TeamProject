@@ -1,5 +1,5 @@
-Shane,3
-Jesse,3
-Mark,2
-Bill,1
-Ron,0
+Shane,4
+Ron,3
+Ron,3
+Bill,2
+Mark,1

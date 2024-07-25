@@ -114,10 +114,45 @@ namespace QuizGame
             {
                 // Update UI with the current question details
                 QuestionText.Text = currentQuestion.QuestionText;
-                Answer0.Text = currentQuestion.Answers[0];
-                Answer1.Text = currentQuestion.Answers[1];
-                Answer2.Text = currentQuestion.Answers[2];
-                Answer3.Text = currentQuestion.Answers[3]; //get the text for each question
+                if (currentQuestion.Answers[0] != "none")
+                {
+                    Answer0.Visible = true;
+                    Answer0.Text = currentQuestion.Answers[0];
+                }
+                else
+                {
+                    Answer0.Visible = false;
+                }
+
+                if (currentQuestion.Answers[1] != "none")
+                {
+                    Answer1.Visible = true;
+                    Answer1.Text = currentQuestion.Answers[1];
+                }
+                else
+                {
+                    Answer1.Visible = false;
+                }
+
+                if (currentQuestion.Answers[2] != "none")
+                {
+                    Answer2.Visible = true;
+                    Answer2.Text = currentQuestion.Answers[2];
+                }
+                else
+                {
+                    Answer2.Visible = false;
+                }
+
+                if (currentQuestion.Answers[3] != "none")
+                {
+                    Answer3.Visible = true;
+                    Answer3.Text = currentQuestion.Answers[3];
+                }
+                else
+                {
+                    Answer3.Visible = false;
+                }
                 if (currentQuestion.PictureLocation == "none")
                 {
                     pictureBox1.Visible = false; //hide if no picture is given
@@ -164,6 +199,7 @@ namespace QuizGame
                 Debug.WriteLine("no name found"); //do not write if no name is found
             }
             DisplayHighScores(); //update the scores
+            nameTextBox.Text = "";
         }
 
         private void nextQ(object sender, EventArgs e) //next button

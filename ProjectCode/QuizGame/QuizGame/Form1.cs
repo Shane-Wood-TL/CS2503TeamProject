@@ -30,6 +30,8 @@ namespace QuizGame
         bool playSoundEffects = true;
         //debugging mode option
         bool debuggingMode = false;
+        //narration variable
+        bool narrationStatus = false;
 
         //current game score
         int score = 0;
@@ -104,7 +106,7 @@ namespace QuizGame
             currentQuestion = questionManager.GetNextQuestion();
             atQuestion++; //increase current question number
             questionCount.Text = atQuestion.ToString() + "/" + questionManager.Questions.Count.ToString();
-
+            
             nextQuestion.Visible = false; //hide next question button until a answer is selected
             Answer0.Enabled = true;
             Answer1.Enabled = true;
@@ -112,6 +114,13 @@ namespace QuizGame
             Answer3.Enabled = true; //show all buttons
             if (currentQuestion != null)
             {
+                if (narrationStatus)
+                {
+                    Debug.WriteLine(currentQuestion.narrationLocation);
+                    SoundPlayer simpleSound = new SoundPlayer(@currentQuestion.narrationLocation);
+                    simpleSound.Play();
+                }
+
                 // Update UI with the current question details
                 QuestionText.Text = currentQuestion.QuestionText;
                 if (currentQuestion.Answers[0] != "none")
@@ -163,14 +172,69 @@ namespace QuizGame
                     pictureBox1.ImageLocation = currentQuestion.PictureLocation; //get the image location from the question
                 }
             }
-            else
+            else // Handle the case where there are no more questions
             {
-                // Handle the case where there are no more questions
-                if (debuggingMode == false)
+                
+                if (!debuggingMode)
                 {
                     setScenes(false, false, false, true); //show end screen
                     youScored.Text = "You Scored: " + score.ToString() + "/" + questionManager.Questions.Count.ToString(); //write score
                     endScreen.Location = new System.Drawing.Point(0, 0); //move end screen to visible
+                    Application.DoEvents(); // Force UI to update before playing sounds
+                }
+
+                string[] lowestScore = HS4.Text.Split(':'); //get the lowest score
+                int.TryParse(lowestScore[1].Trim(), out int lowestScoreV); //get string back to a int
+
+                SoundPlayer simpleSound1 = null;
+                if (score == 0)
+                {
+                    simpleSound1 = new SoundPlayer(@"Narration/0score.wav");
+                }
+                else if (score == 1)
+                {
+                    simpleSound1 = new SoundPlayer(@"Narration/1score.wav");
+                }
+                else if (score == 2)
+                {
+                    simpleSound1 = new SoundPlayer(@"Narration/2score.wav");
+                }
+                else if (score == 3)
+                {
+                    simpleSound1 = new SoundPlayer(@"Narration/3score.wav");
+                }
+                else if (score == 4)
+                {
+                    simpleSound1 = new SoundPlayer(@"Narration/4score.wav");
+                }
+
+                if (simpleSound1 != null)
+                {
+                    simpleSound1.PlaySync();
+                }
+
+                if (score >= lowestScoreV)
+                {
+                    if (narrationStatus)
+                    {
+                        SoundPlayer simpleSound2 = new SoundPlayer(@"Narration/scorePlaced.wav");
+                        simpleSound2.PlaySync();
+
+                        SoundPlayer simpleSound3 = new SoundPlayer(@"Narration/returnToMainMenu.wav");
+                        simpleSound3.PlaySync();
+                    }
+
+                }
+                else
+                {
+                    if (narrationStatus)
+                    {
+                        SoundPlayer simpleSound2 = new SoundPlayer(@"Narration/scoreNotPlaced.wav");
+                        simpleSound2.PlaySync();
+
+                        SoundPlayer simpleSound3 = new SoundPlayer(@"Narration/returnToMainMenu.wav");
+                        simpleSound3.PlaySync();
+                    }
                 }
             }
         }
@@ -200,6 +264,12 @@ namespace QuizGame
             }
             DisplayHighScores(); //update the scores
             nameTextBox.Text = "";
+
+            if (narrationStatus)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"Narration/titleAudio.wav");
+                simpleSound.Play();
+            }
         }
 
         private void nextQ(object sender, EventArgs e) //next button
@@ -212,6 +282,11 @@ namespace QuizGame
             if (debuggingMode == false)
             {
                 setScenes(true,false,false,false); //only show main menu
+            }
+            if (narrationStatus)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"Narration/titleAudio.wav");
+                simpleSound.Play();
             }
         }
 
@@ -226,6 +301,11 @@ namespace QuizGame
             else
             {
                 settingsGroupBox.Location = new System.Drawing.Point(0, windowHeight); //move the group box to the visble window
+            }
+            if (narrationStatus)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"Narration/settingsAudio.wav");
+                simpleSound.Play();
             }
         }
 
@@ -277,20 +357,34 @@ namespace QuizGame
             {
                 score++;//increase current score if correct
                 QuestionText.Text = "Correct!";
+                nextQuestion.Visible = true; //allow the person to go to the next question
+                Application.DoEvents(); // Force UI to update before playing sounds
                 scoreAmount.Text = "Score: " + score.ToString(); //display new score
                 if (playSoundEffects)
                 {  //play correct sound effect
                     SoundPlayer simpleSound = new SoundPlayer(@"Sounds/Correct.wav");
-                    simpleSound.Play();
+                    simpleSound.PlaySync(); 
+                }
+                if (narrationStatus)
+                {
+                    SoundPlayer simpleSound1 = new SoundPlayer(@"Narration/correctNextQ.wav");
+                    simpleSound1.PlaySync();
                 }
             }
             else
             {
                 QuestionText.Text = "Incorrect";
+                nextQuestion.Visible = true; //allow the person to go to the next question
+                Application.DoEvents(); // Force UI to update before playing sounds
                 if (playSoundEffects)
                 {
                     SoundPlayer simpleSound = new SoundPlayer(@"Sounds/Wrong.wav"); //play wrong sound effect
-                    simpleSound.Play();
+                    simpleSound.PlaySync(); 
+                }
+                if (narrationStatus)
+                {
+                    SoundPlayer simpleSound1 = new SoundPlayer(@"Narration/incorrectNextQ.wav");
+                    simpleSound1.PlaySync();
                 }
             }
             //disable all other button inputs
@@ -307,12 +401,15 @@ namespace QuizGame
                 notNewHighScore.Visible = false;
                 enterNameLabel.Visible = true;
                 nameTextBox.Visible = true;
+                
             }
             else //score is too low to save
             {
                 notNewHighScore.Visible = true;
                 enterNameLabel.Visible = false;
                 nameTextBox.Visible = false;
+
+                
             }
         }
 
@@ -802,6 +899,17 @@ namespace QuizGame
                     HS4.Text = $"{highScore.Name}: {highScore.Score}";
                     HS4_end.Text = $"{highScore.Name}: {highScore.Score}";
                 }
+            }
+        }
+
+        private void Narration_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Narration.Checked) {
+                narrationStatus = true;
+            }
+            else
+            {
+                narrationStatus = false;
             }
         }
     }

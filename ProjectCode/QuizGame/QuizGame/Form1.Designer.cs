@@ -341,7 +341,7 @@
             // 
             // QuestionText
             // 
-            this.QuestionText.Font = new System.Drawing.Font("Sans Serif Collection", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuestionText.Font = new System.Drawing.Font("Sans Serif Collection", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuestionText.Location = new System.Drawing.Point(0, 16);
             this.QuestionText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.QuestionText.Name = "QuestionText";
@@ -400,6 +400,7 @@
             this.Narration.TabIndex = 18;
             this.Narration.Text = "Narration";
             this.Narration.UseVisualStyleBackColor = true;
+            this.Narration.CheckedChanged += new System.EventHandler(this.Narration_CheckedChanged);
             // 
             // soundEffects
             // 

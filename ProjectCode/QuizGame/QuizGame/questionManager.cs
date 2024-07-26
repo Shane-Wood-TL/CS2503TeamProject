@@ -14,15 +14,17 @@ namespace QuizGame
         public string QuestionText { get; set; }
         public string[] Answers { get; set; }
         public string PictureLocation { get; set; }
+        public string narrationLocation { get; set; }
         public int CorrectAnswerIndex { get; set; }
 
         //"struct" for a question
-        public Question(string questionText, string[] answers, string pictureLocation, int correctAnswerIndex)
+        public Question(string questionText, string[] answers, string pictureLocation, string soundLocation, int correctAnswerIndex)
         {
             QuestionText = questionText;
             Answers = answers;
             PictureLocation = pictureLocation;
             CorrectAnswerIndex = correctAnswerIndex;
+            narrationLocation = soundLocation;
         }
 
         //checks if button index matches answer index
@@ -82,21 +84,22 @@ namespace QuizGame
 
         private void AddQuestionFromData(List<string> questionData)
         {
-            if (questionData.Count < 5) return; // each question needs 5 lines; question 1,2,3,4, image, answer index (+1 maybe for audio)
+            if (questionData.Count < 6) return; // Each question needs at least 6 lines: question, 4 answers, sound file path (+1 maybe for image)
 
-            string questionText = questionData[0];//gets the question
-            string[] answers = questionData.GetRange(1, 4).ToArray(); //gets the answer strings
-            string pictureLocation = questionData.Count > 5 ? questionData[5] : string.Empty; // Handle optional image path
+            string questionText = questionData[0]; // Gets the question
+            string[] answers = questionData.GetRange(1, 4).ToArray(); // Gets the answer strings
+            string pictureLocation = questionData.Count > 7 ? questionData[5] : string.Empty; // Handle optional image path
+            string soundFilePath = questionData.Count > 6 ? questionData[6] : string.Empty; // Handle optional sound file path
 
-            //get the correct answer
-            int correctAnswerIndex; //index of correct answer
+            // Get the correct answer index
+            int correctAnswerIndex;
             if (int.TryParse(questionData[questionData.Count - 1], out correctAnswerIndex))
             {
-                Questions.Add(new Question(questionText, answers, pictureLocation, correctAnswerIndex)); //add a question that was read correctly
+                Questions.Add(new Question(questionText, answers, pictureLocation, soundFilePath, correctAnswerIndex)); // Add a question that was read correctly
             }
             else
             {
-                Debug.WriteLine($"Invalid correct answer index: {questionData[questionData.Count - 1]}"); //mark if answer is not possible
+                Debug.WriteLine($"Invalid correct answer index: {questionData[questionData.Count - 1]}"); // Mark if answer is not possible
             }
         }
 

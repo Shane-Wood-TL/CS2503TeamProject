@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>QuizGame</id>
+    <version>1.0.0</version>
+    <title>Quiz Game</title>
+    <authors>QuizGame</authors>
+    <icon>icon.png</icon>
+    <description>A Quiz Game</description>
+    <repository type="git" commit="a69320c696c12c9b0f77a5aa5ed13a0d91d5ee54" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0">
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.DataSetExtensions" version="4.5.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+    <contentFiles>
+      <files include="any/net8.0-windows7.0/highScores.txt" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/0score.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/1score.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/2score.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/3score.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/4score.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/correctNextQ.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/incorrectNextQ.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/q1Narration.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/q2Narration.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/q3Narration.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/q4Narration.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/question1Test.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/returnToMainMenu.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/scoreNotPlaced.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/scorePlaced.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/settingsAudio.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Narration/titleAudio.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Pictures/programmingLanguages.jpg" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Pictures/trine.jpg" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Sounds/Correct.wav" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/questions.txt" buildAction="Content" />
+      <files include="any/net8.0-windows7.0/Sounds/Wrong.wav" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\net8.0-windows\QuizGame.runtimeconfig.json" target="lib\net8.0-windows7.0\QuizGame.runtimeconfig.json" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\bin\Debug\net8.0-windows\QuizGame.dll" target="lib\net8.0-windows7.0\QuizGame.dll" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\highScores.txt" target="content\highScores.txt" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\highScores.txt" target="contentFiles\any\net8.0-windows7.0\highScores.txt" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\0score.wav" target="content\Narration\0score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\0score.wav" target="contentFiles\any\net8.0-windows7.0\Narration\0score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\1score.wav" target="content\Narration\1score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\1score.wav" target="contentFiles\any\net8.0-windows7.0\Narration\1score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\2score.wav" target="content\Narration\2score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\2score.wav" target="contentFiles\any\net8.0-windows7.0\Narration\2score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\3score.wav" target="content\Narration\3score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\3score.wav" target="contentFiles\any\net8.0-windows7.0\Narration\3score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\4score.wav" target="content\Narration\4score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\4score.wav" target="contentFiles\any\net8.0-windows7.0\Narration\4score.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\correctNextQ.wav" target="content\Narration\correctNextQ.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\correctNextQ.wav" target="contentFiles\any\net8.0-windows7.0\Narration\correctNextQ.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\incorrectNextQ.wav" target="content\Narration\incorrectNextQ.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\incorrectNextQ.wav" target="contentFiles\any\net8.0-windows7.0\Narration\incorrectNextQ.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q1Narration.wav" target="content\Narration\q1Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q1Narration.wav" target="contentFiles\any\net8.0-windows7.0\Narration\q1Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q2Narration.wav" target="content\Narration\q2Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q2Narration.wav" target="contentFiles\any\net8.0-windows7.0\Narration\q2Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q3Narration.wav" target="content\Narration\q3Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q3Narration.wav" target="contentFiles\any\net8.0-windows7.0\Narration\q3Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q4Narration.wav" target="content\Narration\q4Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\q4Narration.wav" target="contentFiles\any\net8.0-windows7.0\Narration\q4Narration.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\question1Test.wav" target="content\Narration\question1Test.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\question1Test.wav" target="contentFiles\any\net8.0-windows7.0\Narration\question1Test.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\returnToMainMenu.wav" target="content\Narration\returnToMainMenu.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\returnToMainMenu.wav" target="contentFiles\any\net8.0-windows7.0\Narration\returnToMainMenu.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\scoreNotPlaced.wav" target="content\Narration\scoreNotPlaced.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\scoreNotPlaced.wav" target="contentFiles\any\net8.0-windows7.0\Narration\scoreNotPlaced.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\scorePlaced.wav" target="content\Narration\scorePlaced.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\scorePlaced.wav" target="contentFiles\any\net8.0-windows7.0\Narration\scorePlaced.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\settingsAudio.wav" target="content\Narration\settingsAudio.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\settingsAudio.wav" target="contentFiles\any\net8.0-windows7.0\Narration\settingsAudio.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\titleAudio.wav" target="content\Narration\titleAudio.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Narration\titleAudio.wav" target="contentFiles\any\net8.0-windows7.0\Narration\titleAudio.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Pictures\programmingLanguages.jpg" target="content\Pictures\programmingLanguages.jpg" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Pictures\programmingLanguages.jpg" target="contentFiles\any\net8.0-windows7.0\Pictures\programmingLanguages.jpg" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Pictures\trine.jpg" target="content\Pictures\trine.jpg" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Pictures\trine.jpg" target="contentFiles\any\net8.0-windows7.0\Pictures\trine.jpg" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Sounds\Correct.wav" target="content\Sounds\Correct.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Sounds\Correct.wav" target="contentFiles\any\net8.0-windows7.0\Sounds\Correct.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\questions.txt" target="content\questions.txt" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\questions.txt" target="contentFiles\any\net8.0-windows7.0\questions.txt" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Sounds\Wrong.wav" target="content\Sounds\Wrong.wav" />
+    <file src="C:\Users\townl\OneDrive\Documents\GitHub\Test\CS2503TeamProject\ProjectCode\QuizGame\QuizGame\Sounds\Wrong.wav" target="contentFiles\any\net8.0-windows7.0\Sounds\Wrong.wav" />
+    <file src="C:\Users\townl\OneDrive\Desktop\icon.png" target="\icon.png" />
+  </files>
+</package>

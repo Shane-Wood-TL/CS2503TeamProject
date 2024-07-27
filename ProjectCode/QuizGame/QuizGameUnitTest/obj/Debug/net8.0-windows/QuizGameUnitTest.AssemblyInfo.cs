@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuizGameUnitTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cad69c3fdf68821a240a3aaecf3ba8be3255e311")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a69320c696c12c9b0f77a5aa5ed13a0d91d5ee54")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuizGameUnitTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuizGameUnitTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -41,6 +41,9 @@ namespace QuizGame
         public Form1()
         {
             InitializeComponent();
+            //disable maximizing and minimizing
+            this.MaximizeBox = false;
+            this.MinimizeBox = false; 
             string filePath2 = "highScores.txt"; //file name for high scores
             highScoreManager = new HighScoreManager(filePath2); //create high score manager
             questionManager = new QuestionManager(); //create question manager 
@@ -58,24 +61,21 @@ namespace QuizGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            System.Drawing.Rectangle workingRectangle = Screen.PrimaryScreen.WorkingArea; //get the active resolution of the display (minus taskbar)
-            this.Size = new System.Drawing.Size(windowWidth, windowHeight); ; //set the inital
-            //window size to be 65% of the active resolution
             this.Location = new System.Drawing.Point(20, 20); //open the window at position 20,20
             setScenes(true, false, false, false); //only show main menu
 
 
             settingsGroupBox.Size = new System.Drawing.Size(windowWidth, windowHeight);
-            settingsGroupBox.Location = new System.Drawing.Point(0, windowHeight); //move the group box to the visble window
+            settingsGroupBox.Location = new System.Drawing.Point(0, windowHeight); //move the group box to the invisble window
 
             MainMenuGroupBox.Size = new System.Drawing.Size(windowWidth, windowHeight);
             MainMenuGroupBox.Location = new System.Drawing.Point(0, 0); //move the group box to the visble window
 
             questionForm.Size = new System.Drawing.Size(windowWidth, windowHeight);
-            questionForm.Location = new System.Drawing.Point(windowWidth, 0); //move the group box to the visble window
+            questionForm.Location = new System.Drawing.Point(windowWidth, 0); //move the group box to the invisble window
 
             endScreen.Size = new System.Drawing.Size(windowWidth, windowHeight);
-            endScreen.Location = new System.Drawing.Point(windowWidth, windowHeight); //move the group box to the visble window
+            endScreen.Location = new System.Drawing.Point(windowWidth, windowHeight); //move the group box to the invisble window
 
 
             setRes800x600(); //start with 800x600 resolution
@@ -84,9 +84,9 @@ namespace QuizGame
 
         private void playbuttonClick(object sender, EventArgs e) //main menu, play button 
         {
-            score = 0;
+            score = 0; //reset score
             scoreAmount.Text = "Score: "+score.ToString(); //display new score
-            atQuestion = 0;
+            atQuestion = 0; //start at question 0
             questionManager.CurrentQuestionIndex = 0;
             if (debuggingMode == false)
             {
@@ -123,6 +123,7 @@ namespace QuizGame
 
                 // Update UI with the current question details
                 QuestionText.Text = currentQuestion.QuestionText;
+                //check if question has button as a choice and update its text
                 if (currentQuestion.Answers[0] != "none")
                 {
                     Answer0.Visible = true;
@@ -188,10 +189,11 @@ namespace QuizGame
 
                 if (narrationStatus)
                 {
+                    //play audio for scsore
                     SoundPlayer simpleSound1 = null;
                     if (score == 0)
                     {
-                        simpleSound1 = new SoundPlayer(@"Narration/0score.wav");
+                        simpleSound1 = new SoundPlayer(@"Narration/0score.wav"); 
                     }
                     else if (score == 1)
                     {
@@ -212,12 +214,13 @@ namespace QuizGame
 
                     if (simpleSound1 != null)
                     {
-                        simpleSound1.PlaySync();
+                        simpleSound1.PlaySync(); //play sound
                     }
                 }
 
                 if (score >= lowestScoreV)
                 {
+                    //high enough to rank
                     if (narrationStatus)
                     {
                         SoundPlayer simpleSound2 = new SoundPlayer(@"Narration/scorePlaced.wav");
@@ -230,6 +233,7 @@ namespace QuizGame
                 }
                 else
                 {
+                    //too low to rank
                     if (narrationStatus)
                     {
                         SoundPlayer simpleSound2 = new SoundPlayer(@"Narration/scoreNotPlaced.wav");
@@ -421,6 +425,8 @@ namespace QuizGame
             //800x600
             //1280x720
             //1920x1080
+
+            //handle resolution changing
             if (comboBox1.Text == "800x600")
             {
                 setRes800x600();
@@ -467,7 +473,8 @@ namespace QuizGame
         } //check box for sound effects
 
         private void setRes800x600()
-        {
+        {   
+            //set all points and sizes for 800x600
             windowHeight = 600;
             windowWidth = 800;
 
@@ -595,6 +602,7 @@ namespace QuizGame
 
         private void setRes1280x720()
         {
+            //set all points and sizes for 1280x720
             windowWidth = 1280;
             windowHeight = 720;
 
@@ -717,6 +725,7 @@ namespace QuizGame
 
         private void setRest1920x1080()
         {
+            //set all points and sizes for 1920x1080
             windowWidth = 1920;
             windowHeight = 1080;
 
@@ -840,6 +849,7 @@ namespace QuizGame
 
         private void setScenes(bool mainMenuVisible, bool settingsVisible, bool questionVisible, bool endScreenVisible)
         {
+            //function to hide or unhide group boxes/ scenes
             if (mainMenuVisible)
             {
                 MainMenuGroupBox.Visible = true;
@@ -883,6 +893,8 @@ namespace QuizGame
             var highScores = highScoreManager.ReadHighScores();
             for (int i = 0; i < highScores.Count && i < 5; i++)
             {
+                //for each score if it exists (not -1) display name and score, else hide it
+                //does end screen and main menu at the same time
                 var highScore = highScores[i];
                 if (i == 0)
                 {
@@ -891,7 +903,7 @@ namespace QuizGame
                         HS0.Visible = true;
                         HS0_end.Visible = true;
                         HS0.Text = $"{highScore.Name}: {highScore.Score}";
-                        HS0_end.Text = $"{highScore.Name}: {highScore.Score}";
+                        HS0_end.Text = $"{highScore.Name}: {highScore.Score}"; 
                     }
                     else
                     {
@@ -961,6 +973,7 @@ namespace QuizGame
 
         private void Narration_CheckedChanged(object sender, EventArgs e)
         {
+            //handle narration toggle being on or off
             if (Narration.Checked) {
                 narrationStatus = true;
             }

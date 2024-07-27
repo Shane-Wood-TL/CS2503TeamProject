@@ -186,31 +186,34 @@ namespace QuizGame
                 string[] lowestScore = HS4.Text.Split(':'); //get the lowest score
                 int.TryParse(lowestScore[1].Trim(), out int lowestScoreV); //get string back to a int
 
-                SoundPlayer simpleSound1 = null;
-                if (score == 0)
+                if (narrationStatus)
                 {
-                    simpleSound1 = new SoundPlayer(@"Narration/0score.wav");
-                }
-                else if (score == 1)
-                {
-                    simpleSound1 = new SoundPlayer(@"Narration/1score.wav");
-                }
-                else if (score == 2)
-                {
-                    simpleSound1 = new SoundPlayer(@"Narration/2score.wav");
-                }
-                else if (score == 3)
-                {
-                    simpleSound1 = new SoundPlayer(@"Narration/3score.wav");
-                }
-                else if (score == 4)
-                {
-                    simpleSound1 = new SoundPlayer(@"Narration/4score.wav");
-                }
+                    SoundPlayer simpleSound1 = null;
+                    if (score == 0)
+                    {
+                        simpleSound1 = new SoundPlayer(@"Narration/0score.wav");
+                    }
+                    else if (score == 1)
+                    {
+                        simpleSound1 = new SoundPlayer(@"Narration/1score.wav");
+                    }
+                    else if (score == 2)
+                    {
+                        simpleSound1 = new SoundPlayer(@"Narration/2score.wav");
+                    }
+                    else if (score == 3)
+                    {
+                        simpleSound1 = new SoundPlayer(@"Narration/3score.wav");
+                    }
+                    else if (score == 4)
+                    {
+                        simpleSound1 = new SoundPlayer(@"Narration/4score.wav");
+                    }
 
-                if (simpleSound1 != null)
-                {
-                    simpleSound1.PlaySync();
+                    if (simpleSound1 != null)
+                    {
+                        simpleSound1.PlaySync();
+                    }
                 }
 
                 if (score >= lowestScoreV)
@@ -504,7 +507,7 @@ namespace QuizGame
 
             //question page
             QuestionText.Location = new System.Drawing.Point(0, 0);
-            QuestionText.Size = new System.Drawing.Size(800, 180);
+            QuestionText.Size = new System.Drawing.Size(800, 60);
 
             pictureBox1.Location = new System.Drawing.Point(150, 80);
             pictureBox1.Size = new System.Drawing.Size(500, 250);
@@ -563,10 +566,11 @@ namespace QuizGame
             notNewHighScore.Size = new System.Drawing.Size(500, 57);
             notNewHighScore.Location = new System.Drawing.Point(10, 250);
 
-            enterNameLabel.Size = new System.Drawing.Size(500, 57);
+            enterNameLabel.Size = new System.Drawing.Size(500, 40);
             enterNameLabel.Location = new System.Drawing.Point(10, 350);
 
-            nameTextBox.Size = new System.Drawing.Size(500, 57);
+            nameTextBox.MaximumSize = new System.Drawing.Size(500, 57);
+            nameTextBox.MinimumSize = new System.Drawing.Size(500, 57);
             nameTextBox.Location = new System.Drawing.Point(10, 400);
 
             HS0_end.Size = new System.Drawing.Size(300, 57);
@@ -626,9 +630,9 @@ namespace QuizGame
 
             //question page
             QuestionText.Location = new System.Drawing.Point(0, 0);
-            QuestionText.Size = new System.Drawing.Size(1280, 216);
+            QuestionText.Size = new System.Drawing.Size(1280, 72);
 
-            pictureBox1.Location = new System.Drawing.Point(240, 96);
+            pictureBox1.Location = new System.Drawing.Point(400, 96);
             pictureBox1.Size = new System.Drawing.Size(800, 300);
 
             Answer0.Location = new System.Drawing.Point(0, 412);
@@ -663,13 +667,13 @@ namespace QuizGame
             resLabel.Location = new System.Drawing.Point(400, 192);
 
             DebugM.Size = new System.Drawing.Size(480, 68);
-            DebugM.Location = new System.Drawing.Point(608, 252);
+            DebugM.Location = new System.Drawing.Point(608, 272);
 
             soundEffects.Size = new System.Drawing.Size(480, 68);
-            soundEffects.Location = new System.Drawing.Point(608, 300);
+            soundEffects.Location = new System.Drawing.Point(608, 320);
 
             Narration.Size = new System.Drawing.Size(480, 68);
-            Narration.Location = new System.Drawing.Point(608, 348);
+            Narration.Location = new System.Drawing.Point(608, 368);
 
             mainMenuSettings.Size = new System.Drawing.Size(800, 68);
             mainMenuSettings.Location = new System.Drawing.Point(240, 570);
@@ -687,8 +691,9 @@ namespace QuizGame
             enterNameLabel.Size = new System.Drawing.Size(800, 68);
             enterNameLabel.Location = new System.Drawing.Point(16, 420);
 
-            nameTextBox.Size = new System.Drawing.Size(800, 68);
-            nameTextBox.Location = new System.Drawing.Point(16, 480);
+            nameTextBox.MaximumSize = new System.Drawing.Size(800, 57);
+            nameTextBox.MinimumSize = new System.Drawing.Size(800, 57);
+            nameTextBox.Location = new System.Drawing.Point(16, 500);
 
             HS0_end.Size = new System.Drawing.Size(480, 68);
             HS0_end.Location = new System.Drawing.Point(800, 180);
@@ -748,9 +753,9 @@ namespace QuizGame
 
             //question page
             QuestionText.Location = new System.Drawing.Point(0, 0);
-            QuestionText.Size = new System.Drawing.Size(1920, 324);
+            QuestionText.Size = new System.Drawing.Size(1920, 108);
 
-            pictureBox1.Location = new System.Drawing.Point(360, 144);
+            pictureBox1.Location = new System.Drawing.Point(720, 144);
             pictureBox1.Size = new System.Drawing.Size(1200, 450);
 
             Answer0.Location = new System.Drawing.Point(0, 618);
@@ -809,8 +814,9 @@ namespace QuizGame
             enterNameLabel.Size = new System.Drawing.Size(1200, 102);
             enterNameLabel.Location = new System.Drawing.Point(24, 630);
 
-            nameTextBox.Size = new System.Drawing.Size(1200, 102);
-            nameTextBox.Location = new System.Drawing.Point(24, 720);
+            nameTextBox.MaximumSize = new System.Drawing.Size(1200, 90);
+            nameTextBox.MinimumSize = new System.Drawing.Size(1200, 90);
+            nameTextBox.Location = new System.Drawing.Point(24, 740);
 
             HS0_end.Size = new System.Drawing.Size(720, 102);
             HS0_end.Location = new System.Drawing.Point(1200, 270);
@@ -880,24 +886,75 @@ namespace QuizGame
                 var highScore = highScores[i];
                 if (i == 0)
                 {
-                    HS0.Text = $"{highScore.Name}: {highScore.Score}";
-                    HS0_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    if (highScore.Score != -1)
+                    {
+                        HS0.Visible = true;
+                        HS0_end.Visible = true;
+                        HS0.Text = $"{highScore.Name}: {highScore.Score}";
+                        HS0_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    }
+                    else
+                    {
+                        HS0.Visible = false;
+                        HS0_end.Visible = false;
+                    }
                 }
                 if (i == 1) {
-                    HS1.Text = $"{highScore.Name}: {highScore.Score}";
-                    HS1_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    if (highScore.Score != -1)
+                    {
+                        HS1.Visible = true;
+                        HS1_end.Visible = true;
+                        HS1.Text = $"{highScore.Name}: {highScore.Score}";
+                        HS1_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    }
+                    else
+                    {
+                        HS1.Visible = false;
+                        HS1_end.Visible = false;
+                    }
                 }
                 if (i == 2) {
-                    HS2.Text = $"{highScore.Name}: {highScore.Score}";
-                    HS2_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    if (highScore.Score != -1)
+                    {
+                        HS2.Visible = true;
+                        HS2_end.Visible = true;
+                        HS2.Text = $"{highScore.Name}: {highScore.Score}";
+                        HS2_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    }
+                    else
+                    {
+                        HS2.Visible = false;
+                        HS2_end.Visible = false;
+                    }
                 }
                 if (i == 3) {
-                    HS3.Text = $"{highScore.Name}: {highScore.Score}";
-                    HS3_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    if (highScore.Score != -1)
+                    {
+                        HS3.Visible = true;
+                        HS3_end.Visible = true;
+                        HS3.Text = $"{highScore.Name}: {highScore.Score}";
+                        HS3_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    }
+                    else
+                    {
+                        HS3.Visible = false;
+                        HS3_end.Visible = false;
+                    }
                 }
                 if (i == 4) {
-                    HS4.Text = $"{highScore.Name}: {highScore.Score}";
+                    HS4.Text = $"{highScore.Name}: {highScore.Score}";//need this to determine if score is a new higher one
                     HS4_end.Text = $"{highScore.Name}: {highScore.Score}";
+                    if (highScore.Score != -1)
+                    {
+                        HS4.Visible = true;
+                        HS4_end.Visible = true;
+                        
+                    }
+                    else
+                    {
+                        HS4.Visible = false;
+                        HS4_end.Visible = false;
+                    }
                 }
             }
         }

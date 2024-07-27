@@ -2,7 +2,7 @@
 Software Development Project between Aiko Saito and Shane Wood for Trine University
 
 
-#Supports Multiple Resolutions 
+# Supports Multiple Resolutions 
 ![image](https://github.com/user-attachments/assets/5fd304f7-d41b-4292-bce4-5ec00cefeedd)
 
 ![image](https://github.com/user-attachments/assets/af2e32bb-60ab-4378-88c2-56df5e8df31f)
@@ -10,8 +10,9 @@ Software Development Project between Aiko Saito and Shane Wood for Trine Univers
 ![image](https://github.com/user-attachments/assets/9b7a924b-1775-4047-beb6-4d73d931cb81)
 
 
-#Main Menu
-![image](https://github.com/user-attachments/assets/5d30e2a1-f814-49a8-bede-d148f74fc48f)
+# Main Menu
+![image](https://github.com/user-attachments/assets/45194343-6ad5-4f3e-9615-36d168f40545)
+
 Displays the top 5 scores as read from a file
 
 # 4 Different Questions
@@ -23,7 +24,7 @@ Displays the top 5 scores as read from a file
 
 ![image](https://github.com/user-attachments/assets/b7d2a6aa-e37a-4f9d-9c08-f2f4581bb2e8)
 With optional sound effects and narration
-Questions, correct answer, and audio read from a file
+Questions, correct answers, and audio read from a file
 
 
 # Settings Page
@@ -36,5 +37,8 @@ Enable/Disable debugging mode
 
 # High Score Display
 ![image](https://github.com/user-attachments/assets/80f22009-9010-4edc-baeb-22dd16f8fc42)
+
+![image](https://github.com/user-attachments/assets/2c69cebe-519b-48af-a6d1-47989fdf4a9d)
+
 Displays the top 5 high scores, allows for the user to type in a name if the player is a high scorer
-Allows return to main menu
+Allows return to the main menu

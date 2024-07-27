@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             TitleLabel = new System.Windows.Forms.Label();
             PlayButton = new System.Windows.Forms.Button();
             SettingsButton = new System.Windows.Forms.Button();
@@ -621,6 +622,7 @@
             Controls.Add(questionForm);
             Controls.Add(MainMenuGroupBox);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(2);
             MinimumSize = new System.Drawing.Size(799, 598);
             Name = "Form1";

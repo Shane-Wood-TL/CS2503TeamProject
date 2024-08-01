@@ -518,13 +518,13 @@
             // 
             nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             nameTextBox.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            nameTextBox.Location = new System.Drawing.Point(74, 324);
+            nameTextBox.Location = new System.Drawing.Point(74, 306);
             nameTextBox.Margin = new System.Windows.Forms.Padding(4, 20, 4, 4);
             nameTextBox.MaximumSize = new System.Drawing.Size(1000, 1000);
             nameTextBox.MaxLength = 8;
             nameTextBox.Multiline = true;
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.PlaceholderText = "Play";
+            nameTextBox.PlaceholderText = "Player Name";
             nameTextBox.Size = new System.Drawing.Size(381, 66);
             nameTextBox.TabIndex = 16;
             nameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -616,7 +616,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            ClientSize = new System.Drawing.Size(2108, 1218);
+            ClientSize = new System.Drawing.Size(1924, 1055);
             Controls.Add(endScreen);
             Controls.Add(settingsGroupBox);
             Controls.Add(questionForm);

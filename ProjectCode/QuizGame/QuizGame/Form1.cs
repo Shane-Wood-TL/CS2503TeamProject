@@ -79,6 +79,7 @@ namespace QuizGame
 
 
             setRes800x600(); //start with 800x600 resolution
+            this.Size = new System.Drawing.Size(windowWidth, windowHeight);
 
         }
 
